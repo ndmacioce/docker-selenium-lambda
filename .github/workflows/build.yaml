@@ -25,6 +25,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm install -g serverless
+    - run: docker --help
     - run: export AWS_REGION=us-east-1
     - run: sls create --template-url "https://github.com/umihico/docker-selenium-lambda/tree/main" --path docker-selenium-lambda && cd $_
     - name: serverless deploy
